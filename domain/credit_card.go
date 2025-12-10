@@ -1,6 +1,10 @@
 package domain
 
-import "time"
+import (
+	"time"
+
+	uuid "github.com/satori/go.uuid"
+)
 
 type CreditCard struct {
 	ID              string
@@ -10,6 +14,13 @@ type CreditCard struct {
 	ExpiretionYear  int32
 	CVV             int32
 	Balance         float64
-	limit           float64
+	Limit           float64
 	CreatedAt       time.Time
+}
+
+func NewCreditCard() *CreditCard {
+	card := &CreditCard{}
+	card.ID = uuid.NewV4().String()
+	card.CreatedAt = time.Now()
+	return card
 }
