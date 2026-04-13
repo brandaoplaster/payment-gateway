@@ -10,8 +10,8 @@ type CreditCard struct {
 	ID              string
 	Name            string
 	Number          string
-	ExpiretionMonth int32
-	ExpiretionYear  int32
+	ExpirationMonth int32
+	ExpirationYear  int32
 	CVV             int32
 	Balance         float64
 	Limit           float64
